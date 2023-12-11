@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div className="navbar navbar-dark bg-dark bg-dark navbar-expand-lg">
       <div className="container">
-        <a className="navbar-brand">ArshiaStyle Codding</a>
+        <a className="navbar-brand">ShopStyle Codding</a>
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/" className="nav-link">
