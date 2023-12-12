@@ -6,7 +6,6 @@ export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState([]);
-
   const addToCart = (itemId) => {
     if (!cartItems?.find((item) => item.id === itemId))
       setCartItems([...cartItems, { id: itemId, count: 1 }]);
@@ -22,7 +21,7 @@ export const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems(
       cartItems.map((i) => {
-        if (i.id === itemId) return { ...i, count: i.count - 1 };
+        if (i.id === itemId) return { ...i, count: i.count ===0 ? 0 : i.count - 1 };
         else return i;
       })
     );

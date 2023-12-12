@@ -6,6 +6,8 @@ const Product = (props) => {
   const { id, productName, productImage, price } = props.data;
   const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
 
+  const isInCart = cartItems?.some((item) => item.id === id);
+
   return (
     <div className="col-3">
       <img src={productImage} className="w-100" />
@@ -17,7 +19,14 @@ const Product = (props) => {
       <span className="mx-1">
         {cartItems?.filter((row) => row.id === id)[0]?.count}
       </span>
-      <button className="btn btn-info btn-sm">-</button>
+      {isInCart && (
+        <button
+          className="btn btn-info btn-sm"
+          onClick={() => removeFromCart(id)}
+        >
+          -
+        </button>
+      )}
     </div>
   );
 };
