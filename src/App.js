@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Shop from "./pages/shop/shop.jsx";
 import Cart from "./pages/cart/cart.jsx";
 import Nav from "./components/nav.js";
-import { ShopContextProvider } from "./context/shopContext.js";
+import { ShopContextProvider } from "./context/shopContext-context.js";
 function App() {
   return (
     <div className="App">
